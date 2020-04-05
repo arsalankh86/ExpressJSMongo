@@ -1,6 +1,14 @@
-doctype html
-html
-  head
-    title Express Communication
-  body
+extends layout
+block content
    h1 #{pagetitle}
+   form(method='POST', action='/com/add' )
+     #form-group
+       label Title:
+       input.form-control(type='text', name='title')
+     #form-group
+       label Name:
+       input.form-control(type='text', name='comname')
+     #form-group
+       label Medium:
+       input.form-control(type='text', name='medium')
+     input.btn.btn-primary.control(type='submit', value='Submit')
