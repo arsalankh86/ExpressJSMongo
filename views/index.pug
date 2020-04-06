@@ -1,7 +1,9 @@
 
 extends layout
 block content
+   br
+   br
    h1 #{pageTitle}
    ul
      each c, i in communicationData
-       li= c.name
+       li.list-group-item= c.name

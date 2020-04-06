@@ -12,6 +12,12 @@ var jsonParser = bodyParser.json();
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
+var session = require('express-session');
+
+const expressValidator = require('express-validator');
+
+const flash =  require('connect-flash');
+
 
 mongoose.connect('mongodb://localhost:27017/expresscomdb');
 let db = mongoose.connection;
@@ -24,6 +30,7 @@ db.on('error', function(error){
   console.log(error);
 });
 
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Bring model
 let communications = require('./models/communications');
